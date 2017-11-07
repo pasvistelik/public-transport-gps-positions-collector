@@ -1,0 +1,38 @@
+{
+  "name": "public-transport-gps-positions-collector",
+  "version": "1.0.0",
+  "main": "lib/collector.js",
+  "scripts": {
+    "build": "npm update && babel src --out-dir lib",
+    "prepublish": "npm run build",
+    "test": "babel test/test.js --out-file test/test-compiled.js && node test/test-compiled.js && rimraf test/test-compiled.js"
+  },
+  "author": "Andrey Pasvistelik",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasvistelik/public-transport-gps-positions-collector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pasvistelik/public-transport-gps-positions-collector/issues"
+  },
+  "homepage": "https://github.com/pasvistelik/public-transport-gps-positions-collector#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-plugin-transform-regenerator": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "rimraf": "^2.6.1",
+    "node-fetch": "^1.7.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "grodno-transport-gps-positions-scraper": "git+https://github.com/pasvistelik/grodno-transport-gps-positions-scraper.git"
+  },
+  "description": ""
+}
