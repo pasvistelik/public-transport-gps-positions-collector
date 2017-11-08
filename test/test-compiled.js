@@ -22,6 +22,7 @@ _collector2.default.startCollect();
 
 var simpleRoutesForTest = [{ type: "bus", number: "1" }, { type: "bus", number: "2" }];
 (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+    var allVehicles;
     return _regenerator2.default.wrap(function _callee$(_context) {
         while (1) {
             switch (_context.prev = _context.next) {
@@ -30,16 +31,16 @@ var simpleRoutesForTest = [{ type: "bus", number: "1" }, { type: "bus", number: 
                     return _collector2.default.use(_grodnoTransportGpsPositionsScraper2.default, simpleRoutesForTest);
 
                 case 2:
+                    allVehicles = _collector2.default.vehicles;
 
                     setInterval(function () {
-                        var allVehicles = _collector2.default.vehicles;
                         for (var i = 0, n = allVehicles.length, vehicle = allVehicles[0]; i < n; vehicle = allVehicles[++i]) {
                             console.log("Vehicle " + vehicle.globalId + ": " + vehicle.route.type + " " + vehicle.route.number + ", coords: lat= " + vehicle.lat + ", lng=" + vehicle.lng);
                         }
                         console.log();
                     }, 2000);
 
-                case 3:
+                case 4:
                 case 'end':
                     return _context.stop();
             }

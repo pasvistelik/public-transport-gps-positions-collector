@@ -8,8 +8,8 @@ let simpleRoutesForTest = [{type: "bus", number: "1"},{type: "bus", number: "2"}
 
     await PositionsCollector.use(GrodnoPositionsScraper, simpleRoutesForTest);
 
+    let allVehicles = PositionsCollector.vehicles;
     setInterval(function(){
-        let allVehicles = PositionsCollector.vehicles;
         for(let i = 0, n = allVehicles.length, vehicle = allVehicles[0]; i < n; vehicle = allVehicles[++i]){
             console.log("Vehicle "+vehicle.globalId+": "+vehicle.route.type+" "+vehicle.route.number+", coords: lat= "+vehicle.lat+", lng="+vehicle.lng);
         }
