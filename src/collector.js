@@ -5,7 +5,7 @@ var collectingStarted = false;
 function continuePositionsUpdating(){
     if(!collectingStarted) return;
     for (let i = 0, n = PositionsCollector.scrapers.length, currentScraper = PositionsCollector.scrapers[0]; i < n; currentScraper = PositionsCollector.scrapers[++i]){
-        let vehicles = currentScraper.getVehicles();
+        let vehicles = currentScraper.ejectUpdatedVehicles();
         for (let j = 0, m = vehicles.length, currentVehicle = vehicles[0]; j < m; currentVehicle = vehicles[++j]){
             if(currentVehicle.globalId == null){
                 const index = PositionsCollector.vehicles.length;
