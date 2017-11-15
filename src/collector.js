@@ -1,4 +1,5 @@
 import CollectorConfig from './config';
+import PositionsLocalArchive from './positionsLocalArchive'
 
 var collectingStarted = false;
 
@@ -12,6 +13,7 @@ function continuePositionsUpdating(){
                 currentVehicle.globalId = index;
                 PositionsCollector.vehicles[index] = currentVehicle;
             }
+            PositionsLocalArchive.push(currentVehicle);
         }
     }
     setTimeout(continuePositionsUpdating, CollectorConfig.updatingInterval);
