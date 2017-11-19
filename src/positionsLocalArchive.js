@@ -23,6 +23,7 @@ class Position {
         this.timeSeconds = tmpDate.getSeconds() + 60 * tmpDate.getMinutes() + 3600 * tmpDate.getHours();//time in seconds from day begin
 
         this.routeId = (vehicle.route != null) ? vehicle.route.routeId : null;
+        this.routeCode = (vehicle.route != null) ? vehicle.route.hashcode : null;
         this.wayId = (vehicle.way != null) ? vehicle.way.wayId : null;
         this.tripId = (vehicle.trip != null) ? vehicle.trip.tripId : null;
 
